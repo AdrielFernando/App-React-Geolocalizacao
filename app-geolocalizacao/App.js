@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {View} from 'react-native';
-import {styles} from './style.js';
+import {style} from './style.js';
 import {requestForegroundPermissionsAsync, getCurrentPositionAsync, LocationObject, watchPositionAsync, LocationAccuracy} from 'expo-location';
 import MapView, {Marker} from 'react-native-maps';
 
@@ -43,10 +43,10 @@ export default function App()
   }, []);
 
   return (
-    <View style = {styles.container}>
+    <View style = {style.container}>
       {
         location &&
-        <MapView ref = {mapRef} style = {styles.map} initialRegion = {{latitude: location.coords.latitude, longitude: location.coords.longitude, latitudeDelta: 0.005, longitudeDelta: 0.005}}>
+        <MapView ref = {mapRef} style = {style.map} initialRegion = {{latitude: location.coords.latitude, longitude: location.coords.longitude, latitudeDelta: 0.005, longitudeDelta: 0.005}}>
           <Marker coordinate = {{latitude: location.coords.latitude, longitude: location.coords.longitude}}></Marker>
         </MapView>
       }      
